@@ -68,61 +68,64 @@ def display_game_state(secret_word, guessed_letters):
     print("\nAktueller Stand:", " ".join(display))
     print("Geratene Buchstaben:", " ".join(sorted(guessed_letters)))
 
+RED = "\033[91m"
+RESET = "\033[0m"
+
 HANGMAN_PICS = [
-    """
-     +---+
-         |
-         |
-         |
-        ===""",
-    """
-     +---+
-     O   |
-         |
-         |
-        ===""",
-    """
-     +---+
-     O   |
-     |   |
-         |
-        ===""",
-    """
-     +---+
-     O   |
-    /|   |
-         |
-        ===""",
-    """
-     +---+
-     O   |
-    /|\\  |
-         |
-        ===""",
-    """
-     +---+
-     O   |
-    /|\\  |
-    /    |
-        ===""",
-    """
-     +---+
-     O   |
-    /|\\  |
-    / \\  |
-        ===""",
-    """
-     +---+
-    [O   |
-    /|\\  |
-    / \\  |
-        ===""",
-    """
-     +---+
-    [O]  |
-    /|\\  |
-    / \\  |
-        ==="""
+    f"""
+ +---+
+     |
+     |
+     |
+    ===""",
+    f"""
+ +---+
+ {RED}O{RESET}   |
+     |
+     |
+    ===""",
+    f"""
+ +---+
+ {RED}O{RESET}   |
+ {RED}|{RESET}   |
+     |
+    ===""",
+    f"""
+ +---+
+ {RED}O{RESET}   |
+{RED}/|{RESET}   |
+     |
+    ===""",
+    f"""
+ +---+
+ {RED}O{RESET}   |
+{RED}/|\\{RESET}  |
+     |
+    ===""",
+    f"""
+ +---+
+ {RED}O{RESET}   |
+{RED}/|\\{RESET}  |
+{RED}/    {RESET}|
+    ===""",
+    f"""
+ +---+
+ {RED}O{RESET}   |
+{RED}/|\\{RESET}  |
+{RED}/ \\  {RESET}|
+    ===""",
+    f"""
+ +---+
+{RED}[O{RESET}   |
+{RED}/|\\{RESET}  |
+{RED}/ \\  {RESET}|
+    ===""",
+    f"""
+ +---+
+{RED}[O]{RESET}  |
+{RED}/|\\{RESET}  |
+{RED}/ \\  {RESET}|
+ === GAME OVER ==="""
 ]
 
 def print_hangman(errors):

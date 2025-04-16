@@ -4,6 +4,8 @@ def main():
     print(f"Das geheime Wort hat {len(secret_word)} Buchstaben.")
 
     guessed_letters = set()
+    errors = 0
+    max_errors = 8
 
     while True:
         guess = input("Rate einen Buchstaben: ").lower()
@@ -18,6 +20,8 @@ def main():
             print("Treffer! Der Buchstabe ist im Wort.")
         else:
             print("Leider falsch.")
+            errors += 1
+            print(f"Fehler: {errors} von {max_errors}")
 
         display_game_state(secret_word, guessed_letters)
 

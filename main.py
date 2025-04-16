@@ -14,6 +14,7 @@ def play_game():
     original_word = getpass("Bitte gib ein Wort ein: ")
     secret_word = original_word.lower()
     print(f"Das geheime Wort hat {len(secret_word)} Buchstaben.")
+    print("Um das Spiel abzubrechen, drücke bitte #")
     print()
 
     guessed_letters = set()
@@ -23,6 +24,10 @@ def play_game():
     while True:
         print("---------------------------------")
         guess = input("Rate einen Buchstaben: ").lower()
+
+        if guess == "#":
+            print("Spiel wurde abgebrochen.")
+            break
 
         if len(guess) != 1:
             print("Bitte gib genau einen Buchstaben ein.")

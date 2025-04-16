@@ -5,10 +5,14 @@ def main():
     guess = input("Rate einen Buchstaben: ").lower()
     print(f"Du hast '{guess}' geraten.")
 
-    if guess in secret_word:
-        print("Treffer! Der Buchstabe ist im Wort.")
-    else:
-        print("Leider falsch.")
+    while True:
+        guess = input("Rate einen Buchstaben: ").lower()
+
+        if guess in secret_word:
+            print("Treffer! Der Buchstabe ist im Wort.")
+        else:
+            print("Leider falsch.")
+
 
 
 if __name__ == "__main__":

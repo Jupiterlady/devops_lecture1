@@ -25,6 +25,14 @@ def main():
 
         display_game_state(secret_word, guessed_letters)
 
+        # win or loose
+        if all(letter in guessed_letters for letter in secret_word):
+            print("Glückwunsch! Du hast das Wort erraten!")
+            break
+
+        if errors >= max_errors:
+            print("Leider verloren! Das Wort war:", secret_word)
+            break
 
 def display_game_state(secret_word, guessed_letters):
     display = [letter if letter in guessed_letters else "_" for letter in secret_word]

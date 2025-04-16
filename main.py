@@ -36,6 +36,8 @@ def play_game():
             errors += 1
             print(f"Fehler: {errors} von {max_errors}")
 
+        print_hangman(errors)
+
         display_game_state(secret_word, guessed_letters)
 
         # win or loose
@@ -53,6 +55,65 @@ def display_game_state(secret_word, guessed_letters):
     print(" ".join(display))
     print("Geratene Buchstaben:", " ".join(sorted(guessed_letters)))
 
+HANGMAN_PICS = [
+    """
+     +---+
+         |
+         |
+         |
+        ===""",
+    """
+     +---+
+     O   |
+         |
+         |
+        ===""",
+    """
+     +---+
+     O   |
+     |   |
+         |
+        ===""",
+    """
+     +---+
+     O   |
+    /|   |
+         |
+        ===""",
+    """
+     +---+
+     O   |
+    /|\\  |
+         |
+        ===""",
+    """
+     +---+
+     O   |
+    /|\\  |
+    /    |
+        ===""",
+    """
+     +---+
+     O   |
+    /|\\  |
+    / \\  |
+        ===""",
+    """
+     +---+
+    [O   |
+    /|\\  |
+    / \\  |
+        ===""",
+    """
+     +---+
+    [O]  |
+    /|\\  |
+    / \\  |
+        ==="""
+]
+
+def print_hangman(errors):
+    print(HANGMAN_PICS[errors])
 
 if __name__ == "__main__":
     main()

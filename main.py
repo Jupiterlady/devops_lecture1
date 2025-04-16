@@ -36,9 +36,9 @@ def play_game():
         guessed_letters.add(guess)
 
         if guess in secret_word:
-            print("Treffer! Der Buchstabe ist im Wort.")
+            print("\033[92mTreffer! Der Buchstabe ist im Wort.\033[0m")
         else:
-            print("Leider falsch.")
+            print("\033[91mLeider falsch.\033[0m")
             errors += 1
 
         display_game_state(secret_word, guessed_letters)

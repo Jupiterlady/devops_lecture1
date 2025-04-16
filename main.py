@@ -18,6 +18,10 @@ def play_game():
     while True:
         guess = input("Rate einen Buchstaben: ").lower()
 
+        if len(guess) != 1 or not guess.isalpha():
+            print("Bitte gib genau einen Buchstaben ein.")
+            continue
+
         if guess in guessed_letters:
             print("Diesen Buchstaben hast du schon geraten.")
             continue

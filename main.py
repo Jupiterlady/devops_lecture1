@@ -5,8 +5,12 @@ def main():
     guess = input("Rate einen Buchstaben: ").lower()
     print(f"Du hast '{guess}' geraten.")
 
+    guessed_letters = set()
+
     while True:
         guess = input("Rate einen Buchstaben: ").lower()
+
+        guessed_letters.add(guess)
 
         if guess in secret_word:
             print("Treffer! Der Buchstabe ist im Wort.")

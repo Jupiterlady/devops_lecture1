@@ -10,6 +10,10 @@ def main():
     while True:
         guess = input("Rate einen Buchstaben: ").lower()
 
+        if guess in guessed_letters:
+            print("Diesen Buchstaben hast du schon geraten.")
+            continue
+
         guessed_letters.add(guess)
 
         if guess in secret_word:

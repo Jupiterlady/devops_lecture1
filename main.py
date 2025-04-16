@@ -1,4 +1,12 @@
 def main():
+    while True:
+        play_game()
+        replay = input("\nWillst du nochmal spielen? (j/n): ").lower()
+        if replay != "j":
+            print("Bis zum nächsten Mal!")
+            break
+
+def play_game():
     print("Hello from Hangman")
     secret_word = input("Bitte gib ein Wort ein: ").lower()
     print(f"Das geheime Wort hat {len(secret_word)} Buchstaben.")

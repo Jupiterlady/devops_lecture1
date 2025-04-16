@@ -7,16 +7,18 @@ def main():
             break
 
 def play_game():
-    print("Hello from Hangman")
+    print("Hier ist das Galgenmännchen!", "\n")
     original_word = input("Bitte gib ein Wort ein: ")
     secret_word = original_word.lower()
     print(f"Das geheime Wort hat {len(secret_word)} Buchstaben.")
+    print()
 
     guessed_letters = set()
     errors = 0
     max_errors = 8
 
     while True:
+        print("---------------------------------")
         guess = input("Rate einen Buchstaben: ").lower()
 
         if len(guess) != 1 or not guess.isalpha():
@@ -34,11 +36,11 @@ def play_game():
         else:
             print("Leider falsch.")
             errors += 1
-            print(f"Fehler: {errors} von {max_errors}")
-
-        print_hangman(errors)
 
         display_game_state(secret_word, guessed_letters)
+        print_hangman(errors)
+        print(f"Fehler: {errors} von {max_errors}")
+        print()
 
         # win or loose
         if all(letter in guessed_letters for letter in secret_word):
@@ -51,8 +53,7 @@ def play_game():
 
 def display_game_state(secret_word, guessed_letters):
     display = [letter if letter in guessed_letters else "_" for letter in secret_word]
-    print("\nAktueller Stand:")
-    print(" ".join(display))
+    print("\nAktueller Stand:", " ".join(display))
     print("Geratene Buchstaben:", " ".join(sorted(guessed_letters)))
 
 HANGMAN_PICS = [

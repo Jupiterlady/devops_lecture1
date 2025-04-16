@@ -21,8 +21,12 @@ def play_game():
         print("---------------------------------")
         guess = input("Rate einen Buchstaben: ").lower()
 
-        if len(guess) != 1 or not guess.isalpha():
+        if len(guess) != 1:
             print("Bitte gib genau einen Buchstaben ein.")
+            continue
+
+        if not guess.isalpha():
+            print("Bitte gib einen Buchstaben ein.")
             continue
 
         if guess in guessed_letters:

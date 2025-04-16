@@ -3,6 +3,8 @@ from getpass import getpass
 def main():
     while True:
         play_game()
+        print()
+        print("********************************************************")
         replay = input("Enter für neues Spiel, # zum beenden: ").lower()
         if replay == "#":
             print("Bis zum nächsten Mal!")
@@ -14,7 +16,7 @@ def play_game():
     original_word = getpass("Bitte gib ein Wort ein: ")
     secret_word = original_word.lower()
     print(f"Das geheime Wort hat {len(secret_word)} Buchstaben.")
-    print("Um das Spiel abzubrechen, drücke bitte #")
+    print("Um das Spiel abzubrechen, drücke bitte #.")
     print()
 
     guessed_letters = set()
@@ -22,7 +24,7 @@ def play_game():
     max_errors = 8
 
     while True:
-        print("---------------------------------")
+        print("-------------------------------------------")
         guess = input("Rate einen Buchstaben: ").lower()
 
         if guess == "#":
@@ -125,7 +127,9 @@ HANGMAN_PICS = [
 {RED}[O]{RESET}  |
 {RED}/|\\{RESET}  |
 {RED}/ \\  {RESET}|
- === GAME OVER ==="""
+
+ ======== GAME OVER ========
+"""
 ]
 
 def print_hangman(errors):

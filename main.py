@@ -1,3 +1,5 @@
+from getpass import getpass
+
 def main():
     while True:
         play_game()
@@ -8,7 +10,8 @@ def main():
 
 def play_game():
     print("Hier ist das Galgenmännchen!", "\n")
-    original_word = input("Bitte gib ein Wort ein: ")
+    # in Terminal: getpass(), normal PyCharm run: input()
+    original_word = getpass("Bitte gib ein Wort ein: ")
     secret_word = original_word.lower()
     print(f"Das geheime Wort hat {len(secret_word)} Buchstaben.")
     print()

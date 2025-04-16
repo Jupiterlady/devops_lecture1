@@ -21,6 +21,14 @@ def main():
         else:
             print("Leider falsch.")
 
+        display_game_state(secret_word, guessed_letters)
+
+
+def display_game_state(secret_word, guessed_letters):
+    display = [letter if letter in guessed_letters else "_" for letter in secret_word]
+    print("\nAktueller Stand:")
+    print(" ".join(display))
+    print("Geratene Buchstaben:", " ".join(sorted(guessed_letters)))
 
 
 if __name__ == "__main__":

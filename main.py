@@ -8,7 +8,8 @@ def main():
 
 def play_game():
     print("Hello from Hangman")
-    secret_word = input("Bitte gib ein Wort ein: ").lower()
+    original_word = input("Bitte gib ein Wort ein: ")
+    secret_word = original_word.lower()
     print(f"Das geheime Wort hat {len(secret_word)} Buchstaben.")
 
     guessed_letters = set()
@@ -43,7 +44,7 @@ def play_game():
             break
 
         if errors >= max_errors:
-            print("Leider verloren! Das Wort war:", secret_word)
+            print("Leider verloren! Das Wort war:", original_word)
             break
 
 def display_game_state(secret_word, guessed_letters):

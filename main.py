@@ -3,8 +3,8 @@ from getpass import getpass
 def main():
     while True:
         play_game()
-        replay = input("Enter für neues Spiel, n zum beenden: ").lower()
-        if replay == "n":
+        replay = input("Enter für neues Spiel, # zum beenden: ").lower()
+        if replay == "#":
             print("Bis zum nächsten Mal!")
             break
 
